@@ -3,12 +3,14 @@ import parse from "html-react-parser";
 import React, { useState } from "react";
 import ReactQuill, { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import ImageResize from "quill-image-resize-module-react";
+
+Quill.register("modules/imageResize", ImageResize);
 
 const TextEditor = () => {
   const [body, setBody] = useState("");
 
   const handleBody = (e: string) => {
-    console.log(e);
     setBody(e);
   };
 
@@ -54,7 +56,11 @@ TextEditor.modules = {
     ],
     ["link", "image", "video"],
     ["clean"],
+    ["direction", { align: [] }],
   ],
+  imageResize: {
+    modules: ["Resize", "DisplaySize"],
+  },
 };
 
 TextEditor.formats = [
