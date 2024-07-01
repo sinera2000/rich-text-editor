@@ -12,4 +12,4 @@ npm i quill-image-resize-module
 
 npm i quill-image-resize-module-react
 
-(deployment issues have with image resize modiles)
+(deployment issues have with image resize modules)
